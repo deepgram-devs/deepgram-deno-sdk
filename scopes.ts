@@ -37,11 +37,12 @@ export class Scopes {
     scope: string
   ): Promise<Message> {
     const response = await fetch(
-      `${this._apiUrl}${this.apiPath}/${projectId}/members/${memberId}/scopes`,
+      `https://${this._apiUrl}${this.apiPath}/${projectId}/members/${memberId}/scopes`,
       {
         method: "PUT",
         headers: {
           Authorization: `token ${this._credentials}`,
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           scope,
