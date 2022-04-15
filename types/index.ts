@@ -1,5 +1,3 @@
 export * from "./scopeTypes.ts";
-
-export type Message = {
-  message?: string;
-};
+export * from "./transcription/index.ts";
+export * from "./message.ts";
