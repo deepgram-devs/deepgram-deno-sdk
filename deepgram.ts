@@ -3,6 +3,7 @@ import {
   DefaultOptions,
   validateOptions,
   Transcriber,
+  Projects,
 } from "./deps.ts";
 
 export class Deepgram {
@@ -11,6 +12,7 @@ export class Deepgram {
 
   scopes: Scopes;
   transcription: Transcriber;
+  projects: Projects;
 
   constructor(apiKey: string, apiUrl?: string) {
     this._apiKey = apiKey;
@@ -23,5 +25,6 @@ export class Deepgram {
 
     this.scopes = new Scopes(this._apiKey, this._apiUrl);
     this.transcription = new Transcriber(this._apiKey, this._apiUrl);
+    this.projects = new Projects(this._apiKey, this._apiUrl);
   }
 }
