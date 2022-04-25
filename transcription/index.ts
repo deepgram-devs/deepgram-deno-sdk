@@ -4,7 +4,8 @@ import {
   PrerecordedTranscriptionResponse,
   TranscriptionSource,
 } from "../types/index.ts";
-// import { LiveTranscription } from "./liveTranscription.ts";
+import { LiveTranscription } from "./liveTranscription.ts";
+import { querystring } from "../deps.ts";
 import { preRecordedTranscription } from "./preRecordedTranscription.ts";
 
 export class Transcriber {
@@ -31,11 +32,11 @@ export class Transcriber {
    * Opens a websocket to Deepgram's API for live transcriptions
    * @param options Options to modify transcriptions
    */
-  // live(options?: LiveTranscriptionOptions): LiveTranscription {
-  //   return new LiveTranscription(
-  //     this._credentials,
-  //     this._apiUrl || "",
-  //     options
-  //   );
-  // }
+  live(options?: LiveTranscriptionOptions): LiveTranscription {
+    return new LiveTranscription(
+      this._credentials,
+      this._apiUrl || "",
+      options
+    );
+  }
 }
