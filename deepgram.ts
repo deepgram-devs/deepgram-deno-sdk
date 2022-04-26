@@ -4,6 +4,8 @@ import {
   validateOptions,
   Transcriber,
   Projects,
+  Members,
+  Keys,
 } from "./deps.ts";
 
 export class Deepgram {
@@ -13,6 +15,8 @@ export class Deepgram {
   scopes: Scopes;
   transcription: Transcriber;
   projects: Projects;
+  members: Members;
+  keys: Keys;
 
   constructor(apiKey: string, apiUrl?: string) {
     this._apiKey = apiKey;
@@ -26,5 +30,7 @@ export class Deepgram {
     this.scopes = new Scopes(this._apiKey, this._apiUrl);
     this.transcription = new Transcriber(this._apiKey, this._apiUrl);
     this.projects = new Projects(this._apiKey, this._apiUrl);
+    this.members = new Members(this._apiKey, this._apiUrl);
+    this.keys = new Keys(this._apiKey, this._apiUrl);
   }
 }
