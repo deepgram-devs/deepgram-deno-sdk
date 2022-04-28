@@ -7,6 +7,7 @@ import {
   Members,
   Keys,
   Usage,
+  Invitation,
 } from "./deps.ts";
 
 export class Deepgram {
@@ -19,6 +20,7 @@ export class Deepgram {
   members: Members;
   keys: Keys;
   usage: Usage;
+  invitation: Invitation;
 
   constructor(apiKey: string, apiUrl?: string) {
     this._apiKey = apiKey;
@@ -35,5 +37,6 @@ export class Deepgram {
     this.members = new Members(this._apiKey, this._apiUrl);
     this.keys = new Keys(this._apiKey, this._apiUrl);
     this.usage = new Usage(this._apiKey, this._apiUrl);
+    this.invitation = new Invitation(this._apiKey, this._apiUrl);
   }
 }

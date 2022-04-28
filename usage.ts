@@ -44,7 +44,6 @@ export class Usage {
       if (response.ok) {
         return response.json();
       } else {
-        console.log("RESPONSE NOT OK", response);
         throw `${response.status} ${response.statusText}`;
       }
     } catch (error) {
