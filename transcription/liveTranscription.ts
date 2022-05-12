@@ -53,7 +53,9 @@ export class LiveTranscription extends EventEmitter {
    * Sends data to the Deepgram API via websocket connection
    * @param data Audio data to send to Deepgram
    */
-  public send(data: string | ArrayBufferLike | Blob | ArrayBufferView): void {
+  public send(
+    data: string | ArrayBufferLike | Blob | ArrayBufferView | Uint8Array
+  ): void {
     if (this._socket.readyState === ConnectionState.OPEN) {
       this._socket.send(data);
     } else {
