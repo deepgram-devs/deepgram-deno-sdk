@@ -11,7 +11,13 @@ export type PrerecordedTranscriptionOptions = {
    * @see https://developers.deepgram.com/api-reference/speech-recognition-api#operation/transcribeAudio/properties/model
    */
   model?: Models | string;
-
+  /**
+   * Tier of the model to use.
+   * @default because
+   * @remarks Possible values are base or enhanced
+   * @see https://developers.deepgram.com/documentation/features/tier/
+   */
+  tier?: string;
   /**
    * Version of the model to use.
    * @default latest
