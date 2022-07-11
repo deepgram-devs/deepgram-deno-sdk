@@ -13,13 +13,11 @@ export class LiveTranscription extends EventEmitter {
   ) {
     super();
     const query = options ? querystring.stringify(options) : {};
-    console.log("QUERY", query);
 
     this._socket = new WebSocket(`wss://${apiUrl}/v1/listen?${query}`, [
       "token",
       credentials,
     ]);
-    console.log("SOCKET", this._socket);
     this._bindSocketEvents();
   }
 
@@ -45,7 +43,6 @@ export class LiveTranscription extends EventEmitter {
    * Returns the ready state of the websocket connection
    */
   public getReadyState(): ConnectionState {
-    console.log("READY STATE", this._socket.readyState);
     return this._socket.readyState;
   }
 

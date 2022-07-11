@@ -62,7 +62,6 @@ export class Usage {
   ): Promise<UsageRequest> {
     let response = null;
     try {
-      console.log("REQUST ID", requestId);
       response = await fetch(
         `https://${this._apiUrl}${this.apiPath}/${projectId}/requests/${requestId}`,
         {

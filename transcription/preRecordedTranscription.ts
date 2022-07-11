@@ -55,7 +55,6 @@ export const preRecordedTranscription = async (
   let body;
   if (isUrlSource(source)) {
     body = JSON.stringify(source);
-    console.log("BODY: ", body);
   } else if (isBufferSource(source)) {
     body = source.buffer;
   } else if (isReadStreamSource(source)) {
@@ -64,7 +63,6 @@ export const preRecordedTranscription = async (
     throw new Error("Unknown TranscriptionSource type");
   }
 
-  console.log("SOURCE", source);
   let contentType = "application/json";
   if (!isUrlSource(source)) {
     contentType = source.mimetype;
