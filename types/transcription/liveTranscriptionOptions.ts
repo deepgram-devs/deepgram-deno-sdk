@@ -15,6 +15,13 @@ export type LiveTranscriptionOptions = {
    * @see https://developers.deepgram.com/documentation/features/tier/
    */
   tier?: string;
+
+  /**
+   * Terms or phrases to search for in the submitted audio and replace
+   * @remarks Can send multiple instances in query string replace=this:that&replace=thisalso:thatalso. Replacing a term or phrase with nothing will remove the term or phrase from the audio transcript.
+   * @see https://developers.deepgram.com/documentation/features/replace/
+   */
+  replace?: string;
   /**
    * Version of the model to use.
    * @default latest
