@@ -82,5 +82,8 @@ export const preRecordedTranscription = async (
       body,
     }
   );
-  return response.json();
+  if (response.ok) {
+    return response.json();
+  }
+  throw new Error(`DG: ${response.status} ${response.statusText}`);
 };
