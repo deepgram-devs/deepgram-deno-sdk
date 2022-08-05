@@ -19,7 +19,7 @@ export class Projects {
       headers: {
         Authorization: `token ${this._credentials}`,
         "Content-Type": "application/json",
-        "X-DG-Agent": "deno-sdk/1.0.0",
+        "X-DG-Agent": window.dgAgent,
       },
     });
     return response.json();
@@ -37,7 +37,7 @@ export class Projects {
         headers: {
           Authorization: `token ${this._credentials}`,
           "Content-Type": "application/json",
-          "X-DG-Agent": "deno-sdk/1.0.0",
+          "X-DG-Agent": window.dgAgent,
         },
       }
     );
@@ -59,7 +59,7 @@ export class Projects {
         headers: {
           Authorization: `token ${this._credentials}`,
           "Content-Type": "application/json",
-          "X-DG-Agent": "deno-sdk/1.0.0",
+          "X-DG-Agent": window.dgAgent,
         },
         body: JSON.stringify(updateBody),
       }
