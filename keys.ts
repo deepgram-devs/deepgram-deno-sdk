@@ -19,7 +19,7 @@ export class Keys {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
         }
       );
@@ -54,7 +54,7 @@ export class Keys {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
         }
       );
@@ -99,7 +99,7 @@ export class Keys {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
           body: JSON.stringify({
             comment,
@@ -137,7 +137,7 @@ export class Keys {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
         }
       );

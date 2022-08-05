@@ -1,4 +1,12 @@
 import { Deepgram, DefaultOptions } from "./deps.ts";
+declare global {
+  interface Window {
+    sdkVersion: string;
+    dgAgent: string;
+  }
+}
+window.sdkVersion = "1.0.7";
+window.dgAgent = `deepgram-deno-sdk/v${window.sdkVersion}`;
 
 export default async function deepgram(
   apiKey: string,
