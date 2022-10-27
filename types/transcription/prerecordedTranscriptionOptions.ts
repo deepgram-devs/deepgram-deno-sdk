@@ -126,6 +126,11 @@ export type PrerecordedTranscriptionOptions = {
    */
   keywords?: Array<string>;
   /**
+   * Indicates whether Deepgram will identify and extract key topics for sections of content. When detect_topics is set to true, punctuate will be set to true by default.
+   * @see https://developers.deepgram.com/api-reference/speech-recognition-api#operation/transcribeAudio/properties/detect_topics
+   */
+  detect_topics?: boolean;
+  /**
    * Indicates whether Deepgram will segment speech into meaningful semantic
    * units, which allows the model to interact more naturally and effectively
    * with speakers' spontaneous speech patterns. For example, when humans
