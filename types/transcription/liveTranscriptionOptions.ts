@@ -31,8 +31,6 @@ export type LiveTranscriptionOptions = {
   /**
    * BCP-47 language tag that hints at the primary spoken language.
    * @default en-US
-   * @remarks Possible values are zh-CN, zh-TW, nl, en, en-AU, en-IN, en-NZ, en-GB, en-US, nl, fr, fr-CA, de, hi, hi-Latn, id, it, ja, 
-   * ko, pl, pt, pt-BR, pt-PT, ru, es, es-419, sv, tr or null
    * @see https://developers.deepgram.com/api-reference/speech-recognition-api#operation/transcribeAudio/properties/language
    */
   language?: string;
