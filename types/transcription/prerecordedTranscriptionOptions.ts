@@ -36,7 +36,7 @@ export type PrerecordedTranscriptionOptions = {
   language?: string;
 
   /**
-   * Indicates whether to detect the language of the provided audio. 
+   * Indicates whether to detect the language of the provided audio.
    * @see https://developers.deepgram.com/documentation/features/detect-language/
    */
   detect_language?: boolean;
@@ -110,7 +110,36 @@ export type PrerecordedTranscriptionOptions = {
    * 999,999 would be transcribed as 999999.
    * @see https://developers.deepgram.com/api-reference/speech-recognition-api#operation/transcribeAudio/properties/numerals
    */
+  numbers?: boolean;
+
+  /**
+   * Same as numbers. Is the old name for the option. Will eventually be deprecated
+   */
   numerals?: boolean;
+
+  /**
+   * Indicates whether to convert dates from written format (e.g., january first) to
+   * numerical format (e.g., 01-01).
+   */
+  dates?: boolean;
+
+  /**
+   * Indicates whether to convert times from written format (e.g., three oclock) to
+   * numerical format (e.g., 3:00).
+   * 	*/
+  times?: boolean;
+
+  /**
+   * Option to format punctuated commands
+   * Before - “i went to the store period new paragraph then i went home”
+   * After - “i went to the store. <\n> then i went home”
+   */
+  dictation?: boolean;
+
+  /**
+   * Option to format measurements in the transcript
+   * */
+  measurements?: boolean;
 
   /**
    * Terms or phrases to search for in the submitted audio. Deepgram searches
