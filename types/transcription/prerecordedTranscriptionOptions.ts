@@ -195,6 +195,35 @@ export type PrerecordedTranscriptionOptions = {
   detect_topics?: boolean;
 
   /**
+   * Indicates whether Deepgram will Identify and detect entities in the transcript
+   * This is a beta feature and is is subject to change. Right now, pass in the string "latest" instead of a boolean value
+   */
+  detect_entities?: boolean;
+
+  /**
+   * Indicates whether Deepgram will identify sentiment in the audio.
+   */
+  sentiment?: boolean;
+
+  /**
+   * Indicates whether Deepgram will identify sentiment in the transcript.
+   */
+  analyze_sentiment?: boolean;
+
+  /**
+   * Corresponds to the language code Deepgram will translate the results into
+   * For example, 'es', 'fr', 'ja'
+   * If requests translation in the same language as their ASR request, a 400 will be returned.
+   */
+  translate?: string;
+
+  /**
+   * Indicates the confidence requirement for non-neutral sentiment.
+   * Setting this variable turns sentiment analysis on.
+   */
+  sentiment_threshold?: number;
+
+  /**
    * Indicates whether Deepgram will segment speech into meaningful semantic
    * units, which allows the model to interact more naturally and effectively
    * with speakers' spontaneous speech patterns. For example, when humans
