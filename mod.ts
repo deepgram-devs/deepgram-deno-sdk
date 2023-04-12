@@ -5,7 +5,7 @@ declare global {
     dgAgent: string;
   }
 }
-window.sdkVersion = "1.0.7";
+window.sdkVersion = "1.1.0";
 window.dgAgent = `deepgram-deno-sdk/v${window.sdkVersion}`;
 
 export default async function deepgram(
