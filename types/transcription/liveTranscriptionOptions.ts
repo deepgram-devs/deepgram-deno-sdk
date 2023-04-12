@@ -104,7 +104,36 @@ export type LiveTranscriptionOptions = {
    * 999,999 would be transcribed as 999999.
    * @see https://developers.deepgram.com/api-reference/speech-recognition-api#operation/transcribeAudio/properties/numerals
    */
+  numbers?: boolean;
+
+  /**
+   * Same as numbers. Is the old name for the option. Will eventually be deprecated
+   */
   numerals?: boolean;
+
+  /**
+   * Indicates whether to convert dates from written format (e.g., january first) to
+   * numerical format (e.g., 01-01).
+   */
+  dates?: boolean;
+
+  /**
+   * Indicates whether to convert times from written format (e.g., three oclock) to
+   * numerical format (e.g., 3:00).
+   * 	*/
+  times?: boolean;
+
+  /**
+   * Option to format punctuated commands
+   * Before - “i went to the store period new paragraph then i went home”
+   * After - “i went to the store. <\n> then i went home”
+   */
+  dictation?: boolean;
+
+  /**
+   * Option to format measurements in the transcript
+   * */
+  measurements?: boolean;
 
   /**
    * Terms or phrases to search for in the submitted audio. Deepgram searches
@@ -142,7 +171,7 @@ export type LiveTranscriptionOptions = {
   keywords?: Array<string>;
 
   /**
-   * Indicates whether the streaming endpoint should send you updates to its transcription as more audio becomes available. 
+   * Indicates whether the streaming endpoint should send you updates to its transcription as more audio becomes available.
    * When set to true, the streaming endpoint returns regular updates, which means transcription results will likely change for a period of time. By default, this flag is set to false.
    * @see https://developers.deepgram.com/documentation/features/interim-results/
    */
@@ -158,8 +187,8 @@ export type LiveTranscriptionOptions = {
   endpointing?: boolean;
 
   /**
-   * Length of time in milliseconds of silence that voice activation detection (VAD) will use to detect that a speaker has finished speaking. 
-   * Used when endpointing is enabled. Defaults to 10 ms. 
+   * Length of time in milliseconds of silence that voice activation detection (VAD) will use to detect that a speaker has finished speaking.
+   * Used when endpointing is enabled. Defaults to 10 ms.
    * Deepgram customers may configure a value between 10 ms and 5000 ms; on-premise customers may remove this restriction.
    * @default 10
    * @see https://developers.deepgram.com/documentation/features/voice-activity-detection/
@@ -187,8 +216,8 @@ export type LiveTranscriptionOptions = {
   sample_rate?: number;
 
   /**
-   * Tag to associate with the request. 
-   * Your request will automatically be associated with any tags you add to the API Key used to run the request. 
+   * Tag to associate with the request.
+   * Your request will automatically be associated with any tags you add to the API Key used to run the request.
    * Tags associated with requests appear in usage reports.
    * @see https://developers.deepgram.com/documentation/features/tag/
    */

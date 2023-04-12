@@ -76,4 +76,17 @@ export class Projects {
     }
     throw new Error(`DG: ${response.status} ${response.statusText}`);
   }
+
+  async delete(projectId: string): Promise<void> {
+    const response = await fetch(
+      `https://${this._apiUrl}${this.apiPath}/${projectId}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `token ${this._credentials}`,
+          "Content-Type": "application/json",
+          "X-DG-Agent": window.dgAgent,
+        },
+      }
+    );
 }
