@@ -177,6 +177,13 @@ export type PrerecordedTranscriptionOptions = {
   keywords?: Array<string>;
 
   /**
+   * Support for out-of-vocabulary (OOV) keyword boosting when processing streaming audio is
+   * currently in beta; to fall back to previous keyword behavior append the query parameter
+   * keyword_boost=legacy to your API request.
+   */
+  keyword_boost?: string;
+
+  /**
    * Indicates whether Deepgram will split audio into paragraphs to improve transcript readability. When paragraphs is set to true, you must also set either punctuate, diarize, or multichannel to true.
    * @see https://developers.deepgram.com/documentation/features/paragraphs/
    */
