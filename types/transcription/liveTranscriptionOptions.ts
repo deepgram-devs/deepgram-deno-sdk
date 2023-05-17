@@ -171,6 +171,13 @@ export type LiveTranscriptionOptions = {
   keywords?: Array<string>;
 
   /**
+   * Support for out-of-vocabulary (OOV) keyword boosting when processing streaming audio is
+   * currently in beta; to fall back to previous keyword behavior append the query parameter
+   * keyword_boost=legacy to your API request.
+   */
+  keyword_boost?: string;
+
+  /**
    * Indicates whether the streaming endpoint should send you updates to its transcription as more audio becomes available.
    * When set to true, the streaming endpoint returns regular updates, which means transcription results will likely change for a period of time. By default, this flag is set to false.
    * @see https://developers.deepgram.com/documentation/features/interim-results/
