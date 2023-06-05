@@ -37,7 +37,7 @@ export class Usage {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
         }
       );
@@ -62,7 +62,6 @@ export class Usage {
   ): Promise<UsageRequest> {
     let response = null;
     try {
-      console.log("REQUST ID", requestId);
       response = await fetch(
         `https://${this._apiUrl}${this.apiPath}/${projectId}/requests/${requestId}`,
         {
@@ -70,7 +69,7 @@ export class Usage {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
         }
       );
@@ -106,7 +105,7 @@ export class Usage {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
         }
       );
@@ -142,7 +141,7 @@ export class Usage {
           headers: {
             Authorization: `token ${this._credentials}`,
             "Content-Type": "application/json",
-            "X-DG-Agent": "deno-sdk/1.0.0",
+            "X-DG-Agent": window.dgAgent,
           },
         }
       );

@@ -19,10 +19,13 @@ export class Projects {
       headers: {
         Authorization: `token ${this._credentials}`,
         "Content-Type": "application/json",
-        "X-DG-Agent": "deno-sdk/1.0.0",
+        "X-DG-Agent": window.dgAgent,
       },
     });
-    return response.json();
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(`DG: ${response.status} ${response.statusText}`);
   }
 
   /**
@@ -37,11 +40,14 @@ export class Projects {
         headers: {
           Authorization: `token ${this._credentials}`,
           "Content-Type": "application/json",
-          "X-DG-Agent": "deno-sdk/1.0.0",
+          "X-DG-Agent": window.dgAgent,
         },
       }
     );
-    return response.json();
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(`DG: ${response.status} ${response.statusText}`);
   }
 
   /**
@@ -59,12 +65,28 @@ export class Projects {
         headers: {
           Authorization: `token ${this._credentials}`,
           "Content-Type": "application/json",
-          "X-DG-Agent": "deno-sdk/1.0.0",
+          "X-DG-Agent": window.dgAgent,
         },
         body: JSON.stringify(updateBody),
       }
     );
 
-    return response.json();
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(`DG: ${response.status} ${response.statusText}`);
   }
+
+  async delete(projectId: string): Promise<void> {
+    const response = await fetch(
+      `https://${this._apiUrl}${this.apiPath}/${projectId}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `token ${this._credentials}`,
+          "Content-Type": "application/json",
+          "X-DG-Agent": window.dgAgent,
+        },
+      }
+    );
 }

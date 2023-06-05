@@ -55,7 +55,6 @@ export const preRecordedTranscription = async (
   let body;
   if (isUrlSource(source)) {
     body = JSON.stringify(source);
-    console.log("BODY: ", body);
   } else if (isBufferSource(source)) {
     body = source.buffer;
   } else if (isReadStreamSource(source)) {
@@ -64,7 +63,6 @@ export const preRecordedTranscription = async (
     throw new Error("Unknown TranscriptionSource type");
   }
 
-  console.log("SOURCE", source);
   let contentType = "application/json";
   if (!isUrlSource(source)) {
     contentType = source.mimetype;
@@ -79,10 +77,13 @@ export const preRecordedTranscription = async (
       headers: {
         Authorization: `token ${apiKey}`,
         "Content-Type": contentType,
-        "X-DG-Agent": "deno-sdk/1.0.0",
+        "X-DG-Agent": window.dgAgent,
       },
       body,
     }
   );
-  return response.json();
+  if (response.ok) {
+    return response.json();
+  }
+  throw new Error(`DG: ${response.status} ${response.statusText}`);
 };
