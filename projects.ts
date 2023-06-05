@@ -89,4 +89,5 @@ export class Projects {
         },
       }
     );
+  }
 }
