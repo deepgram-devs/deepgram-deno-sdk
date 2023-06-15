@@ -1,16 +1,19 @@
 # Deepgram Deno SDK
 
-Community Deno SDK for [Deepgram](https://www.deepgram.com/)'s automated speech recognition APIs.
+Community Deno SDK for [Deepgram](https://www.deepgram.com/). Start building with our powerful transcription & speech understanding API.
 
 > This SDK only supports hosted usage of api.deepgram.com.
 
-To access the API you will need a Deepgram account. Sign up for free at [signup][signup].
+## Getting an API Key
 
----
+🔑 To access the Deepgram API you will need a [free Deepgram API Key](https://console.deepgram.com/signup?jump=keys).
+## Documentation
+
+You can learn more about the Deepgram API at [developers.deepgram.com](https://developers.deepgram.com/docs).
 
 ## Current Status
 
-There is minimal functionality on the SDK but we hope to add more features soon.
+There is minimal functionality available in the Deno SDK but we hope to add more features soon.
 
 ## Development and Contributing
 
@@ -25,12 +28,8 @@ To make sure our community is safe for all, be sure to review and agree to our
 We love to hear from you so if you have questions, comments or find a bug in the
 project, let us know! You can either:
 
-- [Open an issue](https://github.com/deepgram-devs/deepgram-deno-sdk/issues/new) on this repository
-- Tweet at us! We're [@DeepgramDevs on Twitter](https://twitter.com/DeepgramDevs)
+- [Open an issue in this repository](https://github.com/deepgram-devs/deepgram-deno-sdk/issues/new)
+- [Join the Deepgram Github Discussions Community](https://github.com/orgs/deepgram/discussions)
+- [Join the Deepgram Discord Community](https://discord.gg/xWRaCDBtW4)
 
-## Further Reading
-
-Check out the Developer Documentation at [https://developers.deepgram.com/](https://developers.deepgram.com/)
-
-[signup]: https://console.deepgram.com/signup?utm_medium=github&utm_source=DEVREL&utm_content=deepgram-deno-sdk
 [license]: LICENSE.txt
