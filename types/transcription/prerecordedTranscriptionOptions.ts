@@ -10,7 +10,7 @@ export type PrerecordedTranscriptionOptions = {
    * @remarks Possible values are enhanced or base
    * @see https://developers.deepgram.com/documentation/features/tier/
    */
-  tier?: Tiers;
+  tier?: Tiers | string;
 
   /**
    * AI model used to process submitted audio.
