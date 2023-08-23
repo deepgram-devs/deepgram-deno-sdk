@@ -1,6 +1,8 @@
 # Deepgram Deno SDK
 
-Community Deno SDK for [Deepgram](https://www.deepgram.com/). Start building with our powerful transcription & speech understanding API.
+> ❗Deprecation Notice: This SDK is no longer supported and will not have new features added to it.
+
+Community Deno SDK for [Deepgram](https://www.deepgram.com/). Power your apps with world-class speech and Language AI models.
 
 > This SDK only supports hosted usage of api.deepgram.com.
 
